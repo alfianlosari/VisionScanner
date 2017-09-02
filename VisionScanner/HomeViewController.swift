@@ -21,7 +21,7 @@ class HomeViewController: UIViewController {
     lazy var fetchedResultsController: NSFetchedResultsController<Vision> = {
         let fr = NSFetchRequest<Vision>(entityName: "Vision")
         fr.sortDescriptors = [
-            NSSortDescriptor(key: #keyPath(Vision.createdAt), ascending: true)
+            NSSortDescriptor(key: #keyPath(Vision.createdAt), ascending: false)
         ]
         fr.fetchBatchSize = 20
         let frc = NSFetchedResultsController(fetchRequest: fr, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
